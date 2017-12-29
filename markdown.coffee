@@ -13,7 +13,7 @@ pack = Packages.register
 #     result.length isnt 1
 
 pack.commands
-  enabled: true
+  enabled: false
 ,
    "heading":
      spoken: 'heading'

@@ -1,10 +1,11 @@
 pack = Packages.register
   name: "lastpass"
+  description: "commands for interfacing with lastpass in chrome plug-in"
   createScope: true
   applications: -> Settings.os.browserApplications
 
 pack.commands
-  enabled: true
+  enabled: false
 ,
   'last-pass-next':
     spoken: 'last pass next'

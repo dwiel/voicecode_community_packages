@@ -3,10 +3,11 @@ pack = Packages.register
   description: "interact with smart nav"
 
 pack.commands
+  enabled: false
+,
   "center mouse":
     spoken: "center mouse"
     description: "center the mouse in the current screen"
     continuous: false
-    enabled: true
     action: ->
       @key 'control', 'shift', 'c'

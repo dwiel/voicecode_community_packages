@@ -3,7 +3,7 @@ enabled = false
 if enabled
   fast_on_off = Packages.register
     name: 'fast-on-off'
-    description: 'a bunch of fast_on_off commands'
+    description: 'commands which allow quickly disabling and re-enabling voicecode'
     condition: -> true
 
   fast_on_off.commands

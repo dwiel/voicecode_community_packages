@@ -1,87 +1,90 @@
-pack = Packages.register
-  name: "help"
-  description: "adding help mode for voicecode. requires installation of commando: https://github.com/lunixbochs/voicecode-commando"
+enabled = false
 
-pack.settings
-  win:
-    backgroundColor: '#FFFFFFFF'
+if enabled
+  pack = Packages.register
+    name: "help"
+    description: "adding help mode for voicecode. requires installation of commando: https://github.com/lunixbochs/voicecode-commando"
 
-subscribe 'currentApplicationChanged', ->
-  win = windowController.get('commandSheet')
-  win?.reload()
+  pack.settings
+    win:
+      backgroundColor: '#FFFFFFFF'
 
-subscribe 'chainWillExecute', (chain)->
-  if chain[0].command != 'help:commando'
+  subscribe 'currentApplicationChanged', ->
     win = windowController.get('commandSheet')
-    win?.hide()
-  if chain[0].command != 'help:command-keys'
-    win = windowController.get('commandKeys')
-    win?.hide()
+    win?.reload()
 
-pack.commands
-  "commando":
-    spoken: "commando"
-    description: "toggle command help"
-    continuous: false
-    enabled: true
-    action: (input) ->
-      _name = 'commandSheet'
-      win = windowController.get(_name)
-      if win?
-        if win.isVisible()
-          win.hide()
+  subscribe 'chainWillExecute', (chain)->
+    if chain[0].command != 'help:commando'
+      win = windowController.get('commandSheet')
+      win?.hide()
+    if chain[0].command != 'help:command-keys'
+      win = windowController.get('commandKeys')
+      win?.hide()
+
+  pack.commands
+    enabled: false
+  ,
+    "commando":
+      spoken: "commando"
+      description: "toggle command help"
+      continuous: false
+      action: (input) ->
+        _name = 'commandSheet'
+        win = windowController.get(_name)
+        if win?
+          if win.isVisible()
+            win.hide()
+          else
+            win.showInactive()
         else
-          win.showInactive()
-      else
-        win = windowController.new _name,
-          x: 0
-          y: 0
-          width: 850
-          height: 600
-          hasShadow: false
-          focusable: false
-          alwaysOnTop: true
-          transparent: true
-          frame: false
-          toolbar: false
-          show: false
-          autoHideMenuBar: true
-          backgroundColor: pack.settings().win.backgroundColor
+          win = windowController.new _name,
+            x: 0
+            y: 0
+            width: 850
+            height: 600
+            hasShadow: false
+            focusable: false
+            alwaysOnTop: true
+            transparent: true
+            frame: false
+            toolbar: false
+            show: false
+            autoHideMenuBar: true
+            backgroundColor: pack.settings().win.backgroundColor
 
-        win.loadURL("http://localhost:6001")
-        win.setIgnoreMouseEvents true
-        win.maximize()
-        win.showInactive()
-  "command-keys":
-    spoken: "key lime"
-    description: "toggle keyboard help"
-    continuous: false
-    enabled: true
-    action: (input) ->
-      _name = 'commandKeys'
-      win = windowController.get(_name)
-      if win?
-        if win.isVisible()
-          win.hide()
+          win.loadURL("http://localhost:6001")
+          win.setIgnoreMouseEvents true
+          win.maximize()
+          win.showInactive()
+    "command-keys":
+      spoken: "key lime"
+      description: "toggle keyboard help"
+      continuous: false
+      action: (input) ->
+        _name = 'commandKeys'
+        win = windowController.get(_name)
+        if win?
+          if win.isVisible()
+            win.hide()
+          else
+            win.showInactive()
         else
-          win.showInactive()
-      else
-        win = windowController.new _name,
-          x: 0
-          y: 0
-          width: 850
-          height: 600
-          hasShadow: false
-          focusable: false
-          alwaysOnTop: true
-          transparent: true
-          frame: false
-          toolbar: false
-          show: false
-          autoHideMenuBar: true
-          backgroundColor: pack.settings().win.backgroundColor
+          win = windowController.new _name,
+            x: 0
+            y: 0
+            width: 850
+            height: 600
+            hasShadow: false
+            focusable: false
+            alwaysOnTop: true
+            transparent: true
+            frame: false
+            toolbar: false
+            show: false
+            autoHideMenuBar: true
+            backgroundColor: pack.settings().win.backgroundColor
 
-        win.loadURL("http://localhost:6001/static/keyboard.svg", {"extraHeaders" : "pragma: no-cache\n"})
-        win.setIgnoreMouseEvents true
-        win.maximize()
-        win.showInactive()
+          win.loadURL("http://localhost:6001/static/keyboard.svg", {"extraHeaders" : "pragma: no-cache\n"})
+          win.setIgnoreMouseEvents true
+          win.maximize()
+          win.showInactive()

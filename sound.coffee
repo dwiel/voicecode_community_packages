@@ -1,12 +1,11 @@
 pack = Packages.register
   name: 'sound device'
-  description: 'command for sound depends on: http://whoshacks.blogspot.com/2009/01/change-audio-devices-via-shell-script.html'
+  description: 'command for changing sound output device. depends on: http://whoshacks.blogspot.com/2009/01/change-audio-devices-via-shell-script.html'
 
 pack.commands
   "change output device":
     spoken: "change output device"
     description: "change output device"
-    enabled: true
     grammarType: 'textCapture'
     continuous: false
     action: (input) ->

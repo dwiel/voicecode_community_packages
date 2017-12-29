@@ -5,6 +5,7 @@ pack = Packages.register
   applications: -> Settings.os.browserApplications
   # condition: -> @inBrowser() and @urlContains '.ipynb'
 
+# this should really be conditioned on the url matching ipython notebook
 # Packages.await 'chrome', (chrome) ->
 #   chrome.implement
 #     'os:get-selected-text': ->

@@ -1,3 +1,5 @@
+# TODO: refactor
+
 pack = Packages.register
   name: "terminal"
   applications: ["com.googlecode.iterm2"]
