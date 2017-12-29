@@ -51,6 +51,7 @@ if enabled
         @key '}', 'command option'
     'search-project':
       spoken: 'marcall'
+      misspellings: 'mark all'
       description: 'search the entire project'
       action: ->
         @key  'f', 'command shift'
@@ -94,10 +95,6 @@ if enabled
         @runAtomCommand 'trigger',
         {selector: 'atom-text-editor.is-focused', command: 'find-and-replace:find-all'},
         true
-    'marcall':
-      spoken: 'mark all'
-      action: ->
-        @key 'f', 'command shift'
     'cell-pair':
       spoken: 'cell pair'
       description: 'select parent in ast'
