@@ -4,7 +4,7 @@ pack = Packages.register
   description: "tmux"
 
 pack.commands
-    enabled: true
+    enabled: false
   ,
   "tmux-list":
     spoken: "tmux list"

@@ -1,7 +1,7 @@
 pack = Packages.register
   name: "terminal"
   applications: ["com.googlecode.iterm2"]
-  description: "automatically generated package for iTerm"
+  description: "additional iterm commands"
 
 Settings.vocabulary =
   vocabulary: [

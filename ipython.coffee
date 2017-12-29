@@ -11,7 +11,7 @@ pack = Packages.register
 #       return ''
 #
 pack.commands
-  enabled: true
+  enabled: false
 ,
   'jupyter-pallet':
     spoken: 'jupiter pallet'

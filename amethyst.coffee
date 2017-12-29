@@ -15,7 +15,7 @@ pack.api
       @key pack.settings().screen_mapping[window.toString()], 'control option shift'
 
 pack.commands
-  enabled: true
+  enabled: false
 ,
   "window next screen":
     spoken: "window next screen"
@@ -69,38 +69,6 @@ pack.commands
     action: (input) ->
       if input?
         @window_screen(input)
-
-  "rearrange windows":
-    spoken: "window rearrange"
-    description: "rearrange windows on screen based on application"
-    action: ->
-      @exec 'open -a Atom'
-      @delay 100
-      @window_screen(1)
-      @do 'window:next'
-      @window_screen(1)
-      @do 'window:next'
-      @window_screen(1)
-
-      @exec 'open -a "Google Chrome"'
-      @delay 100
-      @window_screen(2)
-      @do 'window:next'
-      @window_screen(2)
-      @do 'window:next'
-      @window_screen(2)
-
-      @exec 'open -a "iTerm"'
-      @delay 100
-      @window_screen(2)
-      @do 'window:next'
-      @window_screen(2)
-      @do 'window:next'
-      @window_screen(2)
-
-      # @exec 'open -a "Voicecode"'
-      # @delay 100
-      # @window_screen(2)
 
   "window fullscreen layout":
     spoken: "window full"

@@ -1,6 +1,6 @@
 pack = Packages.register
   name: "help"
-  description: "adding help mode for voicecode"
+  description: "adding help mode for voicecode. requires installation of commando: https://github.com/lunixbochs/voicecode-commando"
 
 pack.settings
   win:
