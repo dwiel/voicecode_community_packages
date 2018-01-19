@@ -5,6 +5,16 @@ This is a place where voicecode users can all contribute custom packages in a ce
 
 Everyone is invited to modify and provide additional packages they think others might find useful.
 
+## Installation
+
+It is recommended that you fork this repo and install your fork locally:
+
+* `cd ~/voicecode`
+* `git clone git@github.com:YOUR_USERNAME/voicecode_community_packages.git community`
+  * NOTE: you can use any directory name you want, but do not include the word `package` or voicecode will not load the packages/commands
+
+Follow these directions to sync changes from the main community repo to your fork: https://help.github.com/articles/syncing-a-fork/
+
 ## Contributing
 
 We're still deciding on the best style guidelines to enable low friction usage of this repository.
